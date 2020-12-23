@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card-columns">
+      <% @courses.each_with_index do |course| %>
+        <% color = returnColor(course)%>
+        <div class="card m-b-30">
+          <div class="card-body">
+            <div class="mini-stat-icon float-right">
+              <i class="mdi mdi-school bg-<%= color%>  text-white"></i>
+            </div>
+            <div>
+              <h4 class="font-15">
+                <%=course.name%>
+              </h4>
+              <h5 class="mt-4">
+                <%=course.courseID %>
+              </h5>
+              <h6 class="mt-4">
+                Số tín chỉ: <%=course.credit %>
+              </h6>
+            </div>
+
+            <%= link_to "#{returnText(course)}", student_register_path(course), class: "btn btn-#{color} mt-2 waves-effect", data: { modal: true } %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

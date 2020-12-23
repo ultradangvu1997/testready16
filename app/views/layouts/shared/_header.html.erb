@@ -1,0 +1,108 @@
+<!-- Header-start -->
+<div class="header-bg">
+  <!-- Navigation Bar-->
+  <header id="topnav">
+    <div class="topbar-main">
+      <div class="container-fluid">
+        <!-- Logo-->
+        <div>
+          <a href=<%= root_path %> class="logo">
+            <span class="logo-light">
+              <i class="mdi mdi-camera-control"></i> <%= @App_Name %>
+            </span>
+          </a>
+        </div>
+        <!-- End Logo-->
+
+        <div class="menu-extras topbar-custom navbar p-0">
+
+          <ul class="navbar-right ml-auto list-inline float-right mb-0">
+
+            <!-- full screen -->
+            <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
+              <a class="nav-link waves-effect" href="#" id="btn-fullscreen">
+                <i class="mdi mdi-arrow-expand-all noti-icon"></i>
+              </a>
+            </li>
+
+            <li class="dropdown notification-list list-inline-item">
+              <div class="dropdown notification-list nav-pro-img">
+                <a class="dropdown-toggle nav-link arrow-none nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                  <img src="https://via.placeholder.com/150" alt="user" class="rounded-circle">
+                </a>
+                <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                  <!-- item-->
+                  <a class="dropdown-item">
+                    Chào bạn, <br><%=current_user.email.truncate(15)%>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <%= button_to "Đăng xuất", sign_out_path, method: :delete, class: 'dropdown-item text-danger' %>
+                </div>
+              </div>
+            </li>
+
+            <li class="menu-item dropdown notification-list list-inline-item">
+              <!-- Mobile menu toggle-->
+              <a class="navbar-toggle nav-link">
+                <div class="lines">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </a>
+              <!-- End mobile menu toggle-->
+            </li>
+
+          </ul>
+
+        </div>
+        <!-- end menu-extras -->
+
+        <div class="clearfix"></div>
+
+      </div>
+      <!-- end container -->
+    </div>
+    <!-- end topbar-main -->
+
+    <!-- MENU Start -->
+    <div class="navbar-custom">
+      <div class="container-fluid">
+
+        <div id="navigation">
+
+          <!-- Navigation Menu-->
+          <ul class="navigation-menu">
+
+            <li class="has-submenu">
+              <a href=<%= admin_dashboard_admin_index_path %>><i class="icon-accelerator"></i> Bảng điều khiển </a>
+            </li>
+
+            <li class="has-submenu">
+              <a href=<%= admin_student_management_index_path %>><i class="icon-profile"></i> Quản lý sinh viên </a>
+            </li>
+
+            <li class="has-submenu">
+              <a href="<%= admin_course_index_path %>"><i class="icon-agenda"></i> Quản lý khoá học </a>
+            </li>
+
+
+            <li class="has-submenu">
+              <a href="<%= admin_room_management_index_path%>"><i class="icon-add-folder"></i> Quản lý phòng thi </a>
+            </li>
+
+            <li class="has-submenu">
+              <a href="<%= admin_exam_index_path %>"><i class="icon-agenda"></i> Quản lý lịch thi </a>
+            </li>
+          </ul>
+          <!-- End navigation menu -->
+        </div>
+        <!-- end #navigation -->
+      </div>
+      <!-- end container -->
+    </div>
+    <!-- end navbar-custom -->
+  </header>
+  <!-- End Navigation Bar-->
+</div>
+<!-- Header-end -->

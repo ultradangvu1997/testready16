@@ -1,0 +1,9 @@
+<%= render partial: 'admin/room_management/include' %>
+<input type="hidden" id="roomID" value=<%= @room.id %>>
+
+<div class="row">
+  <div class="col-12">
+    <%= render partial: 'admin/room_management/show/leftSidebar' %>
+    <%= render partial: 'admin/room_management/show/rightSidebar' %>
+  </div>
+</div>

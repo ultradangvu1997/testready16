@@ -1,0 +1,22 @@
+<% content_for(:html_title) { 'Quản lí phòng thi' } %>
+
+<% content_for :css_includes do %>
+  <%= stylesheet_link_tag "fullcalendar/css/fullcalendar.min.css" %>
+<% end %>
+
+<% content_for :javascript_includes do %>
+  <script>
+      var room_id = -1;
+      var room_id = $('#roomID').val();
+  </script>
+
+  <%= javascript_include_tag "jquery-ui/jquery-ui.min.js" %>
+  <%= javascript_include_tag "moment/moment.js" %>
+  <%= javascript_include_tag "fullcalendar/js/fullcalendar.min.js" %>
+  <%= javascript_include_tag "pages/admin/room_mangement/calendar-init" %>
+
+  <!-- Alertify js -->
+  <%= javascript_include_tag "alertify/js/alertify.js", 'data-turbolinks-track': 'reload'%>
+  <%= javascript_include_tag "pages/admin/room_mangement/alert_room" %>
+
+<% end %>

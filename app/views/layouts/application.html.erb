@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title><%= content_for?(:html_title) ? yield(:html_title) + " | #{@App_Name}" : "#{@App_Name}" %></title>
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
+
+      <%= javascript_include_tag "application.js", 'data-turbolinks-track': 'reload' %>
+
+      <link rel="shortcut icon" href="assets/images/favicon.ico">
+      <%= stylesheet_link_tag "bootstrap.min", 'data-turbolinks-track': 'reload' %>
+      <%= stylesheet_link_tag "metismenu.min", 'data-turbolinks-track': 'reload' %>
+      <%= stylesheet_link_tag "icons", 'data-turbolinks-track': 'reload' %>
+      <%= stylesheet_link_tag "style", 'data-turbolinks-track': 'reload' %>
+    </head>
+
+    <body>
+      <%= yield %>
+    </body>
+
+    <!-- jQuery  -->
+    <%= javascript_include_tag "application.js", 'data-turbolinks-track': 'reload' %>
+    <%#= javascript_include_tag "jquery.min", 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "bootstrap.bundle.min", 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "jquery.slimscroll", 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "waves.min", 'data-turbolinks-track': 'reload' %>
+
+    <!-- App js -->
+    <%= javascript_include_tag "app.js", 'data-turbolinks-track': 'reload' %>
+
+</html>

@@ -1,0 +1,45 @@
+<% content_for(:html_title) { 'Bảng điều khiển' } %>
+
+<% content_for :css_includes do %>
+  <%= stylesheet_link_tag "fullcalendar/css/fullcalendar.min.css" %>
+<% end %>
+
+<% content_for :javascript_includes do %>
+  <script>
+      var room_id = -1;
+  </script>
+  <%= javascript_include_tag "jquery-ui/jquery-ui.min.js" %>
+  <%= javascript_include_tag "moment/moment.js" %>
+  <%= javascript_include_tag "fullcalendar/js/fullcalendar.min.js" %>
+  <%= javascript_include_tag "pages/admin/room_mangement/calendar-init" %>
+<% end %>
+    <div class="row">
+
+      <div class="col-sm-6 col-xl-3">
+        <%= render partial: 'admin/index/card_numberStudents' %>
+      </div>
+
+      <div class="col-sm-6 col-xl-3">
+        <%= render partial: 'admin/index/card_numberExamSchedules' %>
+      </div>
+
+      <div class="col-sm-6 col-xl-3">
+        <%= render partial: 'admin/index/card_numberRegistrations' %>
+      </div>
+
+      <div class="col-sm-6 col-xl-3">
+        <%= render partial: 'admin/index/card_numberStudentsBanned' %>
+      </div>
+
+    </div>
+    <!-- START ROW -->
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="card m-b-30">
+          <div class="card-body">
+            <h4 class="mt-0 header-title mb-4">Lịch thi toàn hệ thống</h4>
+            <div id='calendar' class="col-xl-12 col-lg-12 col-md-12"></div>
+          </div>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,20 @@
+<% content_for(:html_title) { 'In lịch thi' } %>
+<div class="row">
+  <div class="col-12">
+    <div class="card m-b-30">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-12">
+            <%= render partial: 'student_module/print' %>
+
+            <div class="d-print-none mo-mt-2">
+              <div class="float-right">
+                <%= link_to "<i class='fa fa-print'></i> Tạo PDF & In".html_safe, student_export_pdf_path(:format => :pdf), class: 'btn btn-success waves-effect waves-light', target: :_blank %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- end col -->
+</div> <!-- end row -->
